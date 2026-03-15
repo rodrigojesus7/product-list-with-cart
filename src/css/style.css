@@ -1,0 +1,81 @@
+:root{
+
+    --text-preset-1-font-size: 4rem;
+    --text-preset-1-font-weight: 700;
+    --text-preset-1-line-height: 120%;
+    --text-preset-1-letter-spacing: 0;
+
+    --text-preset-2-font-size: 2.4rem;
+    --text-preset-2-font-weight: 700;
+    --text-preset-2-line-height: 125%;
+    --text-preset-2-letter-spacing: 0;
+
+    --text-preset-3-font-size: 1.6rem;
+    --text-preset-3-font-weight: 600;
+    --text-preset-3-line-height: 150%;
+    --text-preset-3-letter-spacing: 0;
+
+    --text-preset-4-font-size: 1.4rem;
+    --text-preset-4-font-weight: 400;
+    --text-preset-4-font-weight-semi-bold: 600;
+    --text-preset-4-line-height: 150%;
+    --text-preset-4-letter-spacing: 0;
+
+
+    --background-color: #FCF8F6;
+
+    --section-title-text-color: #260F08;
+
+    --food-name-text-color: #87635A;
+    --food-description-text-color: #260F08;
+    --food-price-text-color: #C73B0F;
+    --food-image-active-border-color: #C73B0F;
+
+    --add-to-cart-button-empty-background-color: #FFFFFF;
+    --add-to-cart-button-empty-border-color: #AD8A85;
+    --add-to-cart-button-empty-border-color-active: #C73B0F;
+    --add-to-cart-button-empty-text-color: #260F08;
+    --add-to-cart-button-empty-text-color-active: #C73B0F;
+    --add-to-cart-empty-icon-color: #C73B0F;
+
+    --add-to-cart-active-background-color: #C73B0F;
+    --add-to-cart-active-text-color: #FFFFFF;
+    --add-to-cart-active-icon-color: #FFFFFF;
+    --add-to-cart-active-icon-color-active-color-color: #C73B0F;
+    --add-to-cart-active-icon-color-active-background-color: #FFFFFF;
+
+
+    --cart-background-color: #FFFFFF;
+    --cart-separation-line-color: #F5EEEC;
+    --cart-title-color: #C73B0F;
+    --cart-empty-text-color: #87635A;
+    --cart-food-name-text-color: #260F08;
+    --cart-food-quantity-text-color: #C73B0F;
+    --cart-food-unity-item-price-text-color: #87635A;
+    --cart-food-total-item-price-text-color: #87635A;
+    --cart-delete-icon-color: #AD8A85;
+    --cart-delete-icon-color-active: #260F08;
+    --cart-total-text-color: #260F08;
+    --cart-total-price-color: #260F08;
+    --cart-carbon-neutral-background-color: #FCF8F6;
+    --cart-carbon-neutral-text-color: #260F08;
+    --cart-carbon-neutral-icon-color: #1EA575;
+    --cart-confirm-order-button-background-color: #C73B0F;
+    --cart-confirm-order-button-background-color-active: ##942C0C;
+    --cart-confirm-order-button-text-color: #FFFFFF;
+
+    --confirmation-background-color: #FFFFFF
+    --confirmation-icon-color: #1EA575;
+    --confirmation-title-color: #260F08;
+    --confirmation-text-color: #87635A;
+    --confirmation-items-backgound-color: #FCF8F6;
+    --confirmation-food-name-text-color: #260F08;
+    --confirmation-food-quantity-text-color: #C73B0F;
+    --confirmation-unity-item-price-text-color: #87635A;
+    --confirmation-total-item-price-text-color: #260F08;
+    --confirmation-total-order-text-color: #260F08;
+    --confirmation-total-order-price-color: #260F08;
+    --confirmation-new-order-button-background-color: #C73B0F;
+    --confirmation-new-order-button-text-color: #C73B0F;
+
+}
