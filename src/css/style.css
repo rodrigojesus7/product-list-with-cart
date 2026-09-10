@@ -1,4 +1,4 @@
-:root{
+:root {
 
     --text-preset-1-font-size: 4rem;
     --text-preset-1-font-weight: 700;
@@ -64,8 +64,7 @@
     --cart-confirm-order-button-background-color-active: ##942C0C;
     --cart-confirm-order-button-text-color: #FFFFFF;
 
-    --confirmation-background-color: #FFFFFF
-    --confirmation-icon-color: #1EA575;
+    --confirmation-background-color: #FFFFFF --confirmation-icon-color: #1EA575;
     --confirmation-title-color: #260F08;
     --confirmation-text-color: #87635A;
     --confirmation-items-backgound-color: #FCF8F6;
@@ -82,7 +81,7 @@
 
 
 
-body{
+body {
     min-height: 100dvh;
 
     font-family: 'Red Hat Text', sans-serif;
@@ -90,32 +89,34 @@ body{
     background-color: var(--body-background-color);
 }
 
-.main{
+.main {
     padding: 2.4rem;
 }
 
-.foodsContainer{
+.foodsContainer {
     display: flex;
     flex-direction: column;
 
     flex-wrap: wrap;
+
+    gap: 2.4rem;
 }
 
-.foodCategory{
+.foodCategory {
     display: flex;
     flex-direction: column;
 
     gap: 3.2rem;
 }
 
-.food{
+.food {
     display: flex;
     flex-direction: column;
 
     gap: 3.8rem;
 }
 
-.foodCategory__title{
+.foodCategory__title {
     font-size: var(--text-preset-1-font-size);
     font-weight: var(--text-preset-1-font-weight);
     line-height: var(--text-preset-1-line-height);
@@ -124,24 +125,48 @@ body{
     color: var(--section-title-text-color);
 }
 
-.food__imageContainer{
+.food__imageContainer {
     display: flex;
     flex-direction: column;
 
     position: relative;
 }
 
-.food__image{
+.food__image {
     width: 100%;
     object-fit: cover;
+    object-position: center;
 
     border-radius: 0.8rem;
 }
 
-.addToCartBtn{
+.addToCartBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.8rem;
+
     position: absolute;
 
     align-self: center;
 
     bottom: -2rem;
+
+    border-radius: 99.9rem;
+
+    width: 16rem;
+    height: 4.4rem;
+
+    border: 0.1rem solid var(--add-to-cart-button-empty-border-color);
+    background-color: var(--add-to-cart-button-empty-background-color);
+}
+
+.addToCartBtn__text {
+    font-size: var(--text-preset-4-font-size);
+    font-weight: var(--text-preset-4-font-weight-semi-bold);
+    line-height: var(--text-preset-4-line-height);
+    letter-spacing: var(--text-preset-4-letter-spacing);
+
+    color: var(--add-to-cart-button-empty-text-color);
 }
