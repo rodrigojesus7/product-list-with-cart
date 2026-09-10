@@ -160,6 +160,28 @@ body {
 
     border: 0.1rem solid var(--add-to-cart-button-empty-border-color);
     background-color: var(--add-to-cart-button-empty-background-color);
+
+    cursor: pointer;
+
+    transition: all 0.2s ease-in-out;
+}
+
+.addToCartBtn:hover {
+    border-color: var(--add-to-cart-button-empty-border-color-active);
+}
+
+.addToCartBtn:hover .addToCartBtn__text {
+    color: var(--add-to-cart-button-empty-text-color-active);
+}
+
+.addToCartBtn:focus-visible {
+    outline: none;
+    border-color: var(--add-to-cart-button-empty-border-color-active);
+
+}
+
+.addToCartBtn:focus-visible .addToCartBtn__text {
+    color: var(--add-to-cart-button-empty-text-color-active);
 }
 
 .addToCartBtn__text {
@@ -169,6 +191,9 @@ body {
     letter-spacing: var(--text-preset-4-letter-spacing);
 
     color: var(--add-to-cart-button-empty-text-color);
+
+    transition: all 0.2s ease-in-out;
+
 }
 
 .food_infoContainer {
