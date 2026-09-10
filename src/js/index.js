@@ -1,5 +1,18 @@
 const foodsContainer = document.querySelector('.foodsContainer')
 
+let screenSize = ''
+
+
+if (innerWidth < 768) {
+    screenSize = 'mobile'
+} else if (innerWidth < 1024) {
+    screenSize = 'tablet'
+} else {
+    screenSize = 'desktop'
+}
+
+
+
 async function getData() {
 
     try {
@@ -10,10 +23,13 @@ async function getData() {
         console.log(data)
 
 
+
+
         foodsContainer.innerHTML = `${data.map(food => `
         <div class="food">
-            <div>
-                <img src="${food.image.thumbnail}" alt="${food.name}">
+            <div class="food__imageContainer">
+                <img class="food__image" src="${food.image[screenSize]}" alt="${food.name}">
+                
                 <button class="addToCartBtn">
                     <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" fill="none" viewBox="0 0 21 20">
                         <g fill="#C73B0F" clip-path="url(#a)">

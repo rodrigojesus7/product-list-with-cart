@@ -90,6 +90,31 @@ body{
     background-color: var(--body-background-color);
 }
 
+.main{
+    padding: 2.4rem;
+}
+
+.foodsContainer{
+    display: flex;
+    flex-direction: column;
+
+    flex-wrap: wrap;
+}
+
+.foodCategory{
+    display: flex;
+    flex-direction: column;
+
+    gap: 3.2rem;
+}
+
+.food{
+    display: flex;
+    flex-direction: column;
+
+    gap: 3.8rem;
+}
+
 .foodCategory__title{
     font-size: var(--text-preset-1-font-size);
     font-weight: var(--text-preset-1-font-weight);
@@ -97,4 +122,26 @@ body{
     letter-spacing: var(--text-preset-1-letter-spacing);
 
     color: var(--section-title-text-color);
+}
+
+.food__imageContainer{
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+}
+
+.food__image{
+    width: 100%;
+    object-fit: cover;
+
+    border-radius: 0.8rem;
+}
+
+.addToCartBtn{
+    position: absolute;
+
+    align-self: center;
+
+    bottom: -2rem;
 }
