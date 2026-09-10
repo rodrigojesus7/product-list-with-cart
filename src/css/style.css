@@ -170,3 +170,10 @@ body {
 
     color: var(--add-to-cart-button-empty-text-color);
 }
+
+.food_infoContainer{
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.4rem;
+}

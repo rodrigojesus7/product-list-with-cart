@@ -48,7 +48,7 @@ async function getData() {
                 </button>
             </div>
 
-            <div>
+            <div class="food_infoContainer">
                 <h2> ${food.category}</h2>
                 <h3>${food.name}</h3>
                 <p>$<span>${food.price.toFixed(2)}</span></p>
