@@ -114,6 +114,8 @@ body {
     flex-direction: column;
 
     gap: 3.8rem;
+
+    max-width: fit-content;
 }
 
 .foodCategory__title {
