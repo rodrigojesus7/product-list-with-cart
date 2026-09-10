@@ -22,7 +22,7 @@
     --text-preset-4-letter-spacing: 0;
 
 
-    --background-color: #FCF8F6;
+    --body-background-color: #FCF8F6;
 
     --section-title-text-color: #260F08;
 
@@ -78,4 +78,14 @@
     --confirmation-new-order-button-background-color: #C73B0F;
     --confirmation-new-order-button-text-color: #C73B0F;
 
+}
+
+
+
+body{
+    min-height: 100dvh;
+
+    font-family: 'Red Hat Text', sans-serif;
+
+    background-color: var(--body-background-color);
 }
