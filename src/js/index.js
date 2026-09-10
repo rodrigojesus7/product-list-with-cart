@@ -49,9 +49,9 @@ async function getData() {
             </div>
 
             <div class="food_infoContainer">
-                <h2> ${food.category}</h2>
-                <h3>${food.name}</h3>
-                <p>$<span>${food.price.toFixed(2)}</span></p>
+                <h2 class="food__category"> ${food.category}</h2>
+                <h3 class="food__name">${food.name}</h3>
+                <p class="food__price">$<span class="food__price-number">${food.price.toFixed(2)}</span></p>
             </div>
 
         </div>
