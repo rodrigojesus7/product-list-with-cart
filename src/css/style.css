@@ -89,3 +89,12 @@ body{
 
     background-color: var(--body-background-color);
 }
+
+.foodCategory__title{
+    font-size: var(--text-preset-1-font-size);
+    font-weight: var(--text-preset-1-font-weight);
+    line-height: var(--text-preset-1-line-height);
+    letter-spacing: var(--text-preset-1-letter-spacing);
+
+    color: var(--section-title-text-color);
+}
