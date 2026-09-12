@@ -27,7 +27,7 @@ async function getData() {
 
         foodsContainer.innerHTML = `${data.map(food => `
         <div class="food">
-            <div class="food__imageContainer">
+            <div class="food__imageContainer food__imageContainer--active">
                 <img class="food__image" src="${food.image[screenSize]}" alt="${food.name}">
                 
                 <button class="addToCartBtn hidden">

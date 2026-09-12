@@ -149,6 +149,15 @@ body {
     flex-direction: column;
 
     position: relative;
+
+    outline: 0.2rem solid transparent;
+    border-radius: 0.8rem;
+
+    transition: outline 0.2s ease-in-out;
+}
+
+.food__imageContainer--active {
+    outline: 0.2rem solid var(--food-image-active-border-color);
 }
 
 .food__image {
@@ -259,7 +268,8 @@ body {
     transition: all 0.2s ease-in-out;
 }
 
-.addToCartWithQuantity__button:hover, .addToCartWithQuantity__button:focus-visible {
+.addToCartWithQuantity__button:hover,
+.addToCartWithQuantity__button:focus-visible {
     background-color: var(--add-to-cart-active-button-color-active);
 }
 
@@ -267,7 +277,8 @@ body {
     transition: all 0.2s ease-in-out;
 }
 
-.addToCartWithQuantity__button:hover svg path, .addToCartWithQuantity__button:focus-visible svg path {
+.addToCartWithQuantity__button:hover svg path,
+.addToCartWithQuantity__button:focus-visible svg path {
     fill: var(--add-to-cart-active-icon-color-active)
 }
 
