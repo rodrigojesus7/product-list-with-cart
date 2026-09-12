@@ -255,6 +255,20 @@ body {
     border: solid 0.15rem var(--add-to-cart-active-button-border-color);
 
     cursor: pointer;
+
+    transition: all 0.2s ease-in-out;
+}
+
+.addToCartWithQuantity__button:hover, .addToCartWithQuantity__button:focus-visible {
+    background-color: var(--add-to-cart-active-button-color-active);
+}
+
+.addToCartWithQuantity__button svg path {
+    transition: all 0.2s ease-in-out;
+}
+
+.addToCartWithQuantity__button:hover svg path, .addToCartWithQuantity__button:focus-visible svg path {
+    fill: var(--add-to-cart-active-icon-color-active)
 }
 
 .addToCartWithQuantityContainer__text {
