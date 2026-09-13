@@ -27,10 +27,10 @@ async function getData() {
 
         foodsContainer.innerHTML = `${data.map(food => `
         <div class="food">
-            <div class="food__imageContainer food__imageContainer--active">
+            <div class="food__imageContainer">
                 <img class="food__image" src="${food.image[screenSize]}" alt="${food.name}">
                 
-                <button class="addToCartBtn hidden">
+                <button class="addToCartBtn">
                     <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" fill="none" viewBox="0 0 21 20">
                         <g fill="#C73B0F" clip-path="url(#a)">
                             <path
@@ -47,7 +47,7 @@ async function getData() {
                     <p class="addToCartBtn__text">Add to Cart</p>
                 </button>
 
-                <div class="addToCartWithQuantityContainer">
+                <div class="addToCartWithQuantityContainer hidden">
                     <button class="addToCartWithQuantity__button addToCartWithQuantity__decrementButton">
                         <svg xmlns="http://www.w3.org/2000/svg" width="10" height="2" fill="none" viewBox="0 0 10 2">
                             <path fill="#fff" d="M0 .375h10v1.25H0V.375Z" />
