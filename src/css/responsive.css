@@ -1,0 +1,30 @@
+@media (min-width: 48rem) {
+
+    .main {
+        padding: 4rem;
+
+        width: 100%;
+    }
+
+    .foodCategory {
+        width: 100%;
+    }
+
+    .foodsContainer{
+        display: grid;
+
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto;
+
+        gap: 3.2rem 2.4rem;
+    }
+
+    .food {
+        width: 21.333rem;
+    }
+
+
+
+
+
+}
