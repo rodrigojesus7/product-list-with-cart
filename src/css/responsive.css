@@ -10,7 +10,7 @@
         width: 100%;
     }
 
-    .foodsContainer{
+    .foodsContainer {
         display: grid;
 
         grid-template-columns: 1fr 1fr 1fr;
@@ -23,7 +23,28 @@
     }
 
 
+}
 
 
 
+@media (min-width: 90rem) {
+    .main {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+
+        padding: 8.8rem 11.2rem;
+    }
+
+    .foodCategory {
+        width: 80rem;
+    }
+
+    .food {
+        width: 25.067rem;
+    }
+
+    .cart {
+        width: 38.4rem;
+    }
 }
