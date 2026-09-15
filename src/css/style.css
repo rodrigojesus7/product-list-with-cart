@@ -21,6 +21,11 @@
     --text-preset-4-line-height: 150%;
     --text-preset-4-letter-spacing: 0;
 
+    --text-preset-5-font-size: 1.6rem;
+    --text-preset-5-font-weight: 400;
+    --text-preset-5-line-height: auto;
+    --text-preset-5-letter-spacing: 0;
+
 
     --body-background-color: #FCF8F6;
 
@@ -67,10 +72,12 @@
     --cart-carbon-neutral-text-color: #260F08;
     --cart-carbon-neutral-icon-color: #1EA575;
     --cart-confirm-order-button-background-color: #C73B0F;
-    --cart-confirm-order-button-background-color-active: ##942C0C;
+    --cart-confirm-order-button-background-color-active: #942C0C;
     --cart-confirm-order-button-text-color: #FFFFFF;
 
-    --confirmation-background-color: #FFFFFF --confirmation-icon-color: #1EA575;
+    --confirmation-background-color: #FFFFFF;
+    --confirmation-background-overlay-color: #00000080;
+    --confirmation-icon-color: #1EA575;
     --confirmation-title-color: #260F08;
     --confirmation-text-color: #87635A;
     --confirmation-items-backgound-color: #FCF8F6;
@@ -81,7 +88,8 @@
     --confirmation-total-order-text-color: #260F08;
     --confirmation-total-order-price-color: #260F08;
     --confirmation-new-order-button-background-color: #C73B0F;
-    --confirmation-new-order-button-text-color: #C73B0F;
+    --confirmation-new-order-button-background-color-active: #952C0B;
+    --confirmation-new-order-button-text-color: #FFFFFF;
 
 }
 
@@ -97,6 +105,8 @@ body {
     font-family: 'Red Hat Text', sans-serif;
 
     background-color: var(--body-background-color);
+
+    position: relative;
 }
 
 .main {
@@ -374,13 +384,94 @@ body {
 
 
 
+.orderConfirmationModalSection {
+    display: flex;
+
+    position: absolute;
+    z-index: 3;
+
+    height: 100%;
+    width: 100%;
+
+    background-color: var(--confirmation-background-overlay-color);
+
+    padding-top: 9.5rem;
+}
 
 
+.orderConfirmationModalContainer {
+    display: flex;
+    flex-direction: column;
 
+    gap: 3.2rem;
 
+    width: 100%;
+    height: 71.7rem;
 
+    padding: 4rem 2.4rem;
 
+    background-color: var(--confirmation-background-color);
 
+    border-radius: 1.2rem;
+}
+
+.orderConfirmationModal__messageContainer {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2.4rem;
+}
+
+.orderConfirmationModal__textContainer {
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.8rem;
+}
+
+.orderConfirmationModal__textContainer__title {
+    font-size: var(--text-preset-1-font-size);
+    font-weight: var(--text-preset-1-font-weight);
+    line-height: var(--text-preset-1-line-height);
+    letter-spacing: var(--text-preset-1-letter-spacing);
+
+    color: var(--confirmation-title-color);
+}
+
+.orderConfirmationModal__textContainer__text {
+    font-size: var(--text-preset-5-font-size);
+    font-weight: var(--text-preset-5-font-weight);
+    line-height: var(--text-preset-5-line-height);
+    letter-spacing: var(--text-preset-5-letter-spacing);
+
+    color: var(--confirmation-text-color);
+}
+
+.orderConfirmationModalSection__button {
+    background-color: var(--confirmation-new-order-button-background-color);
+    color: var(--confirmation-new-order-button-text-color);
+
+    font-size: var(--text-preset-3-font-size);
+    font-weight: var(--text-preset-3-font-weight);
+    line-height: var(--text-preset-3-line-height);
+    letter-spacing: var(--text-preset-3-letter-spacing);
+
+    height: 5.3rem;
+    width: 100%;
+
+    border-radius: 99.9rem;
+
+    border: 0.1rem solid transparent;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease-in-out;
+}
+
+.orderConfirmationModalSection__button:hover,
+.orderConfirmationModalSection__button:focus-visible {
+    background-color: var(--confirmation-new-order-button-background-color-active);
+}
 
 .hidden {
     display: none;

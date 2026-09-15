@@ -109,9 +109,9 @@
 
 
 
-    <section class="orderConfirmationModalContainer">
-        <div>
-            <div>
+    <section class="orderConfirmationModalSection">
+        <div class="orderConfirmationModalContainer">
+            <div class="orderConfirmationModal__messageContainer">
                 <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M21 32.121L13.5 24.6195L15.6195 22.5L21 27.879L32.3775 16.5L34.5 18.6225L21 32.121Z"
                         fill="#1EA575" />
@@ -120,32 +120,34 @@
                         fill="#1EA575" />
                 </svg>
 
-                <div>
-                    <h3>Order Confirmed</h3>
-                    <p>We hope you enjoy your food!</p>
+                <div class="orderConfirmationModal__textContainer">
+                    <h3 class="orderConfirmationModal__textContainer__title">Order Confirmed</h3>
+                    <p class="orderConfirmationModal__textContainer__text">We hope you enjoy your food!</p>
                 </div>
 
-            </div>
+                </div>
 
-            <div>
-                <div class="cartItems">
-                    <div>
-                        <h2></h2>
+                <div>
+                    <div class="">
                         <div>
-                            <p>4x</p>
+                            <h2></h2>
                             <div>
-                                <p>@$7.00</p>
-                                <p>$28.00</p>
+                                <p>4x</p>
+                                <div>
+                                    <p>@$7.00</p>
+                                    <p>$28.00</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 10 10">
-                        <path fill="#CAAFA7"
-                            d="M8.375 9.375 5 6 1.625 9.375l-1-1L4 5 .625 1.625l1-1L5 4 8.375.625l1 1L6 5l3.375 3.375-1 1Z" />
-                    </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 10 10">
+                            <path fill="#CAAFA7"
+                                d="M8.375 9.375 5 6 1.625 9.375l-1-1L4 5 .625 1.625l1-1L5 4 8.375.625l1 1L6 5l3.375 3.375-1 1Z" />
+                        </svg>
 
+                    </div>
                 </div>
-            </div>
+
+                <button class="orderConfirmationModalSection__button">Start New Order</button>
 
         </div>
 
