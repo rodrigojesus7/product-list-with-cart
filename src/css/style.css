@@ -408,7 +408,7 @@ body {
     width: 100%;
     height: fit-content;
 
-    padding: 4rem 2.4rem;
+    padding: 4rem 2.4rem 2.4rem 2.4rem;
 
     background-color: var(--confirmation-background-color);
 
