@@ -22,6 +22,16 @@
         width: 21.333rem;
     }
 
+    .orderConfirmationModalSection {
+        align-items: center;
+    }
+
+    .orderConfirmationModalContainer {
+
+        width: 68.5rem;
+
+        padding: 4rem;
+    }
 
 }
 

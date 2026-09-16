@@ -386,6 +386,7 @@ body {
 
 .orderConfirmationModalSection {
     display: flex;
+    justify-content: center;
 
     position: absolute;
     z-index: 3;
