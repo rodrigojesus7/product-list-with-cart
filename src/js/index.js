@@ -109,6 +109,21 @@ async function getData() {
         })
 
 
+        decrementButton.forEach((button, index) => {
+            button.addEventListener('click', () => {
+
+                let numericItemQuantityToAdd = Number(itemQuantityToAdd[index].textContent)
+
+                if (numericItemQuantityToAdd === 0) {
+                    return
+                } else if (numericItemQuantityToAdd === 1) {
+                    addToCartWithQuantityContainer[index].classList.add('hidden')
+                } else {
+                    itemQuantityToAdd[index].textContent = numericItemQuantityToAdd - 1
+                }
+            })
+        })
+
 
 
 
