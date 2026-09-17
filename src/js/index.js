@@ -88,6 +88,25 @@ async function getData() {
         })
 
 
+        const incrementButton = document.querySelectorAll('.addToCartWithQuantity__incrementButton')
+        const decrementButton = document.querySelectorAll('.addToCartWithQuantity__decrementButton')
+        let itemQuantityToAdd = document.querySelectorAll('.addToCartWithQuantityContainer__text')
+
+        incrementButton.forEach((button, index) => {
+            button.addEventListener('click', () => {
+
+                let numericItemQuantityToAdd = Number(itemQuantityToAdd[index].textContent)
+
+                if (numericItemQuantityToAdd === 0) {
+                    numericItemQuantityToAdd = 1
+                    itemQuantityToAdd[index].textContent = numericItemQuantityToAdd
+
+                } else {
+                    itemQuantityToAdd[index].textContent = numericItemQuantityToAdd + 1
+
+                }
+            })
+        })
 
 
 
@@ -97,9 +116,6 @@ async function getData() {
 
 
 
-
-
-        
     }
 
     catch (error) {
