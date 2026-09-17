@@ -8,9 +8,15 @@ const cartItemsContainer = document.querySelector('.cartItems__itemsContainer');
 const totalOrderValue = document.querySelector('.cartItems__totalOrderContainer__valueNumber')
 const cartTotalItemsCount = document.querySelector('.cart__totalItemsCount')
 let cart = []
+let foods = []
 
 
 function renderCart() {
+
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0)
+    if (cartTotalItemsCount) {
+        cartTotalItemsCount.textContent = `(${totalItems})`
+    }
 
     if (cart.length === 0) {
         emptyCart.classList.remove('hidden')
@@ -44,9 +50,11 @@ function renderCart() {
                     </div>
                 </div>
                 <button class="cartItems__itemContainer__deleteButton" data-index="${index}">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 10 10">
-                        <path fill="#AD8A85" d="M8.375 2.25h-1.2v-.6c0-.825-.675-1.5-1.5-1.5h-1.8c-.825 0-1.5.675-1.5 1.5v.6h-1.2c-.412 0-.75.338-.75.75s.338.75.75.75h.v6.75c0 .825.675 1.5 1.5 1.5h3.6c.825 0 1.5-.675 1.5-1.5v-6.75h.v6c.412 0 .75-.338.75-.75s-.338-.75-.75-.75Zm-4.5-.6c0-.138.112-.25.25-.25h1.8c.138 0 .25.112.25.25v.6h-2.3v-.6Zm3.6 8.1c0 .138-.112.25-.25.25h-3.6c-.138 0-.25-.112-.25-.25v-6.75h4.1v6.75Z"/>
-                    </svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none"
+                                viewBox="0 0 10 10">
+                                <path fill="#AD8A85"
+                                    d="M8.375 9.375 5 6 1.625 9.375l-1-1L4 5 .625 1.625l1-1L5 4 8.375.625l1 1L6 5l3.375 3.375-1 1Z" />
+                            </svg>
                 </button>
             </div>
         `
@@ -77,8 +85,6 @@ async function getData() {
         let response = await fetch('./data.json')
         let data = await response.json()
 
-        console.log(data[0].image.thumbnail)
-        console.log(data)
 
         foods = data
 
@@ -138,11 +144,24 @@ async function getData() {
 
             button.addEventListener('click', () => {
                 addToCartWithQuantityContainer[index].classList.remove('hidden')
-                itemQuantityToAdd[index].textContent = 1
 
-                emptyCart.classList.add('hidden')
-                confirmOrderContainer.classList.remove('hidden')
-                cartItems.classList.remove('hidden')
+                const food = foods[index]
+                const existingItem = cart.find(item => item.name === food.name)
+
+                if (existingItem) {
+                    existingItem.quantity += 1
+                } else {
+                    cart.push({
+                        name: food.name,
+                        price: food.price,
+                        quantity: 1
+                    })
+                }
+
+                const currentItem = cart.find(item => item.name === food.name)
+                itemQuantityToAdd[index].textContent = currentItem.quantity
+
+                renderCart()
             })
 
         })
@@ -155,16 +174,24 @@ async function getData() {
         incrementButton.forEach((button, index) => {
             button.addEventListener('click', () => {
 
-                let numericItemQuantityToAdd = Number(itemQuantityToAdd[index].textContent)
+                const food = foods[index]
 
-                if (numericItemQuantityToAdd === 0) {
-                    numericItemQuantityToAdd = 1
-                    itemQuantityToAdd[index].textContent = numericItemQuantityToAdd
+                const existingItem = cart.find(item => item.name === food.name);
 
+                if (existingItem) {
+                    existingItem.quantity += 1;
                 } else {
-                    itemQuantityToAdd[index].textContent = numericItemQuantityToAdd + 1
-
+                    cart.push({
+                        name: food.name,
+                        price: food.price,
+                        quantity: 1
+                    });
                 }
+
+                const currentItem = cart.find(item => item.name === food.name)
+                itemQuantityToAdd[index].textContent = currentItem.quantity
+
+                renderCart();
             })
         })
 
@@ -172,16 +199,25 @@ async function getData() {
         decrementButton.forEach((button, index) => {
             button.addEventListener('click', () => {
 
-                let numericItemQuantityToAdd = Number(itemQuantityToAdd[index].textContent)
+                const food = foods[index]
 
-                if (numericItemQuantityToAdd === 0) {
-                    return
-                } else if (numericItemQuantityToAdd === 1) {
-                    itemQuantityToAdd[index].textContent = 0
-                    addToCartWithQuantityContainer[index].classList.add('hidden')
-                } else {
-                    itemQuantityToAdd[index].textContent = numericItemQuantityToAdd - 1
+                const existingItemIndex = cart.findIndex(item => item.name === food.name);
+
+                if (existingItemIndex !== -1) {
+                    cart[existingItemIndex].quantity -= 1;
+
+                    let currentQuantity = cart[existingItemIndex].quantity;
+
+                    itemQuantityToAdd[index].textContent = currentQuantity;
+
+                    if (currentQuantity === 0) {
+                        cart.splice(existingItemIndex, 1);
+
+                        addToCartWithQuantityContainer[index].classList.add('hidden');
+                    }
                 }
+
+                renderCart();
             })
         })
 
