@@ -368,7 +368,7 @@ body {
     align-items: center;
 }
 
-.cartItems__itemContainer__deleteButton{
+.cartItems__itemContainer__deleteButton {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -380,6 +380,24 @@ body {
     border: solid 0.1rem var(--cart-delete-icon-color);
 
     background-color: transparent;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease-in-out;
+}
+
+.cartItems__itemContainer__deleteButton:hover,
+.cartItems__itemContainer__deleteButton:focus-visible {
+    border: solid 0.1rem var(--cart-delete-icon-color-active);
+}
+
+.cartItems__itemContainer__deleteButton svg path {
+    transition: all 0.2s ease-in-out;
+}
+
+.cartItems__itemContainer__deleteButton:hover svg path,
+.cartItems__itemContainer__deleteButton:focus-visible svg path {
+    fill: var(--cart-delete-icon-color-active);
 }
 
 .cartItems__itemContainer__infoContainer {
