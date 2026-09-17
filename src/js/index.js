@@ -1,5 +1,60 @@
 const foodsContainer = document.querySelector('.foodsContainer')
 
+const emptyCart = document.querySelector('.emptyCart')
+const confirmOrderContainer = document.querySelector('.cartItems__confirmOrderContainer')
+const cartItems = document.querySelector('.cartItems')
+
+const cartItemsContainer = document.querySelector('.cartItems__itemsContainer');
+const totalOrderValue = document.querySelector('.cartItems__totalOrderContainer__valueNumber')
+const cartTotalItemsCount = document.querySelector('.cart__totalItemsCount')
+let cart = []
+
+
+function renderCart() {
+
+    if (cart.length === 0) {
+        emptyCart.classList.remove('hidden')
+        confirmOrderContainer.classList.add('hidden')
+        cartItems.classList.add('hidden')
+        return
+    }
+
+    emptyCart.classList.add('hidden')
+    confirmOrderContainer.classList.remove('hidden')
+    cartItems.classList.remove('hidden')
+
+    cartItemsContainer.innerHTML = ''
+
+    let totalOrderPrice = 0
+
+    cart.forEach((item, index) => {
+        const itemTotalPrice = item.price * item.quantity
+        totalOrderPrice += itemTotalPrice
+
+        cartItemsContainer.innerHTML += `
+        <div class="cartItems__itemContainer">
+                <div class="cartItems__itemContainer__infoContainer">
+                    <h4 class="cartItems__itemContainer__itemName">${item.name}</h4>
+                    <div class="cartItems__itemContainer__itemNumbersInfoContainer">
+                        <span class="cartItems__itemContainer__itemQuantity">${item.quantity}x</span>
+                        <div class="cartItems__itemContainer__itemValuesInfoContainer">
+                            <p class="cartItems__itemContainer__itemUnityValue">@ $<span class="cartItems__itemContainer__itemUnityValue__number">${item.price.toFixed(2)}</span></p>
+                            <p class="cartItems__itemContainer__itemTotalValue">$<span class="cartItems__itemContainer__itemTotalValue__number">${itemTotalPrice.toFixed(2)}</span></p>
+                        </div>
+                    </div>
+                </div>
+                <button class="cartItems__itemContainer__deleteButton" data-index="${index}">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 10 10">
+                        <path fill="#AD8A85" d="M8.375 2.25h-1.2v-.6c0-.825-.675-1.5-1.5-1.5h-1.8c-.825 0-1.5.675-1.5 1.5v.6h-1.2c-.412 0-.75.338-.75.75s.338.75.75.75h.v6.75c0 .825.675 1.5 1.5 1.5h3.6c.825 0 1.5-.675 1.5-1.5v-6.75h.v6c.412 0 .75-.338.75-.75s-.338-.75-.75-.75Zm-4.5-.6c0-.138.112-.25.25-.25h1.8c.138 0 .25.112.25.25v.6h-2.3v-.6Zm3.6 8.1c0 .138-.112.25-.25.25h-3.6c-.138 0-.25-.112-.25-.25v-6.75h4.1v6.75Z"/>
+                    </svg>
+                </button>
+            </div>
+        `
+    })
+
+    totalOrderValue.textContent = totalOrderPrice.toFixed(2)
+}
+
 
 
 
@@ -25,7 +80,7 @@ async function getData() {
         console.log(data[0].image.thumbnail)
         console.log(data)
 
-
+        foods = data
 
 
         foodsContainer.innerHTML = `${data.map(food => `
@@ -84,6 +139,10 @@ async function getData() {
             button.addEventListener('click', () => {
                 addToCartWithQuantityContainer[index].classList.remove('hidden')
                 itemQuantityToAdd[index].textContent = 1
+
+                emptyCart.classList.add('hidden')
+                confirmOrderContainer.classList.remove('hidden')
+                cartItems.classList.remove('hidden')
             })
 
         })
@@ -125,6 +184,8 @@ async function getData() {
                 }
             })
         })
+
+
 
 
 
