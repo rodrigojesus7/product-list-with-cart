@@ -369,7 +369,7 @@ body {
     gap: 2.4rem;
 }
 
-.cartItems__itemsContainer{
+.cartItems__itemsContainer {
     display: flex;
     flex-direction: column;
 
@@ -427,6 +427,8 @@ body {
 .cartItems__itemContainer__infoContainer {
     display: flex;
     flex-direction: column;
+
+    gap: 0.8rem;
 }
 
 .cartItems__itemContainer__itemName {
@@ -477,7 +479,81 @@ body {
     color: var(--cart-food-total-item-price-text-color);
 }
 
+.cartItems__totalOrderContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
+.cartItems__totalOrderContainer__text {
+    font-size: var(--text-preset-4-font-size);
+    font-weight: var(--text-preset-4-font-weight);
+    line-height: var(--text-preset-4-line-height);
+    letter-spacing: var(--text-preset-4-letter-spacing);
+
+    color: var(--cart-total-text-color);
+}
+
+.cartItems__totalOrderContainer__value {
+    font-size: var(--text-preset-2-font-size);
+    font-weight: var(--text-preset-2-font-weight);
+    line-height: var(--text-preset-2-line-height);
+    letter-spacing: var(--text-preset-2-letter-spacing);
+
+    color: var(--cart-total-price-color);
+}
+
+.cartItems__confirmOrderContainer {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2.4rem;
+}
+
+.cartItems__confirmOrderMessageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 0.8rem;
+
+    padding: 1.6rem;
+
+    background-color: var(--cart-carbon-neutral-background-color);
+
+    border-radius: 0.8rem;
+}
+
+.cartItems__confirmOrderMessageText {
+    font-size: var(--text-preset-4-font-size);
+    font-weight: var(--text-preset-4-font-weight);
+    line-height: var(--text-preset-4-line-height);
+    letter-spacing: var(--text-preset-4-letter-spacing);
+
+    color: var(--cart-carbon-neutral-text-color);
+}
+
+.cartItems__confirmOrderMessageText strong {
+    font-weight: var(--text-preset-4-font-weight-semi-bold);
+}
+
+.cartItems__confirmOrderButton {
+    height: 5.3rem;
+    border-radius: 99.9rem;
+
+    font-size: var(--text-preset-3-font-size);
+    font-weight: var(--text-preset-3-font-weight);
+    line-height: var(--text-preset-3-line-height);
+    letter-spacing: var(--text-preset-3-letter-spacing);
+
+    color: var(--cart-confirm-order-button-text-color);
+
+    background-color: var(--cart-confirm-order-button-background-color);
+
+    border: solid 0.1rem transparent;
+
+    cursor: pointer;
+}
 
 
 .emptyCart {
