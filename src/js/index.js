@@ -83,6 +83,7 @@ async function getData() {
 
             button.addEventListener('click', () => {
                 addToCartWithQuantityContainer[index].classList.remove('hidden')
+                itemQuantityToAdd[index].textContent = 1
             })
 
         })
@@ -117,6 +118,7 @@ async function getData() {
                 if (numericItemQuantityToAdd === 0) {
                     return
                 } else if (numericItemQuantityToAdd === 1) {
+                    itemQuantityToAdd[index].textContent = 0
                     addToCartWithQuantityContainer[index].classList.add('hidden')
                 } else {
                     itemQuantityToAdd[index].textContent = numericItemQuantityToAdd - 1
