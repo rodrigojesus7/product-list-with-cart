@@ -362,10 +362,34 @@ body {
     color: var(--cart-title-color);
 }
 
+.cartItems {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2.4rem;
+}
+
+.cartItems__itemsContainer{
+    display: flex;
+    flex-direction: column;
+
+    gap: 1.6rem;
+}
+
 .cartItems__itemContainer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    padding-bottom: 1.6rem;
+
+    gap: 1.6rem;
+
+    border-bottom: solid 0.1rem var(--cart-separation-line-color);
+}
+
+.cartItems__itemContainer:last-child {
+    padding-bottom: 2.4rem;
 }
 
 .cartItems__itemContainer__deleteButton {
@@ -413,6 +437,48 @@ body {
 
     color: var(--cart-food-name-text-color);
 }
+
+.cartItems__itemContainer__itemNumbersInfoContainer {
+    display: flex;
+
+    gap: 1.6rem;
+}
+
+.cartItems__itemContainer__itemQuantity {
+    font-size: var(--text-preset-4-font-size);
+    font-weight: var(--text-preset-4-font-weight-semi-bold);
+    line-height: var(--text-preset-4-line-height);
+    letter-spacing: var(--text-preset-4-letter-spacing);
+
+    color: var(--cart-food-quantity-text-color);
+}
+
+.cartItems__itemContainer__itemValuesInfoContainer {
+    display: flex;
+
+    gap: 0.8rem;
+}
+
+.cartItems__itemContainer__itemUnityValue {
+    font-size: var(--text-preset-4-font-size);
+    font-weight: var(--text-preset-4-font-weight);
+    line-height: var(--text-preset-4-line-height);
+    letter-spacing: var(--text-preset-4-letter-spacing);
+
+    color: var(--cart-food-unity-item-price-text-color);
+}
+
+.cartItems__itemContainer__itemTotalValue {
+    font-size: var(--text-preset-4-font-size);
+    font-weight: var(--text-preset-4-font-weight-semi-bold);
+    line-height: var(--text-preset-4-line-height);
+    letter-spacing: var(--text-preset-4-letter-spacing);
+
+    color: var(--cart-food-total-item-price-text-color);
+}
+
+
+
 
 .emptyCart {
     display: flex;
