@@ -362,6 +362,40 @@ body {
     color: var(--cart-title-color);
 }
 
+.cartItems__itemContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cartItems__itemContainer__deleteButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2rem;
+    width: 2rem;
+
+    border-radius: 50%;
+
+    border: solid 0.1rem var(--cart-delete-icon-color);
+
+    background-color: transparent;
+}
+
+.cartItems__itemContainer__infoContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.cartItems__itemContainer__itemName {
+    font-size: var(--text-preset-4-font-size);
+    font-weight: var(--text-preset-4-font-weight-semi-bold);
+    line-height: var(--text-preset-4-line-height);
+    letter-spacing: var(--text-preset-4-letter-spacing);
+
+    color: var(--cart-food-name-text-color);
+}
+
 .emptyCart {
     display: flex;
     flex-direction: column;
