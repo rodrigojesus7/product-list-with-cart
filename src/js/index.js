@@ -1,5 +1,8 @@
 const foodsContainer = document.querySelector('.foodsContainer')
 
+
+
+
 let screenSize = ''
 
 
@@ -72,6 +75,31 @@ async function getData() {
 
         </div>
         `).join('')}`
+
+        const addToCartBtn = document.querySelectorAll('.addToCartBtn')
+        const addToCartWithQuantityContainer = document.querySelectorAll('.addToCartWithQuantityContainer')
+
+        addToCartBtn.forEach((button, index) => {
+
+            button.addEventListener('click', () => {
+                addToCartWithQuantityContainer[index].classList.remove('hidden')
+            })
+
+        })
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
     }
 
     catch (error) {
