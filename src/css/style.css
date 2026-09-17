@@ -553,8 +553,14 @@ body {
     border: solid 0.1rem transparent;
 
     cursor: pointer;
+
+    transition: all 0.2s ease-in-out;
 }
 
+.cartItems__confirmOrderButton:hover,
+.cartItems__confirmOrderButton:focus-visible {
+    background-color: var(--cart-confirm-order-button-background-color-active);
+}
 
 .emptyCart {
     display: flex;
