@@ -70,8 +70,22 @@ function renderCart() {
         button.addEventListener('click', () => {
 
             const index = button.getAttribute('data-index')
+            const itemToRemove = cart[index]
 
             cart.splice(index, 1)
+
+            const foodIndex = foods.findIndex(food => food.name === itemToRemove.name)
+
+            if (foodIndex !== -1) {
+
+                const addToCartBtn = document.querySelectorAll('.addToCartBtn')[foodIndex]
+                const quantityContainer = document.querySelectorAll('.addToCartWithQuantityContainer')[foodIndex]
+                const itemQuantityToAdd = document.querySelectorAll('.addToCartWithQuantityContainer__text')[foodIndex]
+
+                itemQuantityToAdd.textContent = '0'
+
+                quantityContainer.classList.add('hidden')
+            }
 
             renderCart()
 
