@@ -11,6 +11,7 @@ let cart = []
 let foods = []
 
 
+
 function renderCart() {
 
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0)
@@ -61,6 +62,25 @@ function renderCart() {
     })
 
     totalOrderValue.textContent = totalOrderPrice.toFixed(2)
+
+
+    const cartItemsDeleteButtons = document.querySelectorAll('.cartItems__itemContainer__deleteButton')
+
+    cartItemsDeleteButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+
+            const index = button.getAttribute('data-index')
+
+            cart.splice(index, 1)
+
+            renderCart()
+
+        })
+    })
+
+
+
+
 }
 
 
