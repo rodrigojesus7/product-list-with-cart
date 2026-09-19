@@ -66,17 +66,6 @@ function renderCart() {
 
 
 
-let screenSize = ''
-
-
-if (innerWidth < 768) {
-    screenSize = 'mobile'
-} else if (innerWidth < 1024) {
-    screenSize = 'tablet'
-} else {
-    screenSize = 'desktop'
-}
-
 
 
 async function getData() {
@@ -92,8 +81,15 @@ async function getData() {
         foodsContainer.innerHTML = `${data.map(food => `
         <div class="food">
             <div class="food__imageContainer">
-                <img class="food__image" src="${food.image[screenSize]}" alt="${food.name}">
-                
+
+        <picture>
+            <source media="(min-width: 90rem)" srcset="${food.image.desktop}">
+
+                <source media="(min-width: 48rem)" srcset="${food.image.tablet}"">
+
+                    <img class="food__image" src="${food.image.mobile}" alt="${food.name}">
+
+        </picture>                
                 <button class="addToCartBtn">
                     <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" fill="none" viewBox="0 0 21 20">
                         <g fill="#C73B0F" clip-path="url(#a)">
