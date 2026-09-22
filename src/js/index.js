@@ -11,6 +11,43 @@ let cart = []
 let foods = []
 
 
+const modalSection = document.querySelector('.orderConfirmationModalSection')
+const confirmOrderBtn = document.querySelector('.cartItems__confirmOrderButton')
+const modalItemsContainer = document.querySelector('.orderConfirmationModal__cart__cartItemsContainer')
+const modalTotalValue = document.querySelector('.orderConfirmationModal__cart__totalOrderContainer__numericValue')
+const startNewOrderBtn = document.querySelector('.orderConfirmationModalSection__button')
+
+
+confirmOrderBtn.addEventListener('click', () => {
+    modalItemsContainer.innerHTML = ''
+    let modalTotalPrice = 0
+
+    cart.forEach(item => {
+        const itemTotalPrice = item.price * item.quantity
+        modalTotalPrice += itemTotalPrice
+
+        modalItemsContainer.innerHTML += `
+            <div class="orderConfirmationModal__cartItem">
+                <div class="orderConfirmationModal__cartItem__infoContainer">
+                    <img class="orderConfirmationModal__cartItem__thumbnail" src="${item.image}" alt="${item.name}">
+                    <div class="orderConfirmationModal__cartItem__textContainer">
+                        <h2 class="orderConfirmationModal__cartItem__itemName">${item.name}</h2>
+                        <div class="orderConfirmationModal__cartItem__valueContainer">
+                            <p class="orderConfirmationModal__cartItem__quantity">${item.quantity}x</p>
+                            <p class="orderConfirmationModal__cartItem__unityPrice">@$${item.price.toFixed(2)}</p>
+                        </div>
+                    </div>
+                </div>
+                <p class="orderConfirmationModal__cartItem__totalPrice">$${itemTotalPrice.toFixed(2)}</p>
+            </div>
+        `
+    })
+
+    modalTotalValue.textContent = modalTotalPrice.toFixed(2)
+
+    modalSection.classList.remove('hidden')
+})
+
 
 function renderCart() {
 
