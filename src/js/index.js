@@ -184,7 +184,8 @@ async function getData() {
                     cart.push({
                         name: food.name,
                         price: food.price,
-                        quantity: 1
+                        quantity: 1,
+                        image: food.image.thumbnail
                     })
                 }
 
@@ -214,7 +215,8 @@ async function getData() {
                     cart.push({
                         name: food.name,
                         price: food.price,
-                        quantity: 1
+                        quantity: 1,
+                        image: food.image.thumbnail
                     });
                 }
 
