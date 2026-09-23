@@ -49,6 +49,29 @@ confirmOrderBtn.addEventListener('click', () => {
 })
 
 
+startNewOrderBtn.addEventListener('click', () => {
+    cart = []
+
+    modalSection.classList.add('hidden')
+
+    document.querySelectorAll('.addToCartWithQuantityContainer').forEach(container => {
+        container.classList.add('hidden')
+    })
+    document.querySelectorAll('.addToCartBtn').forEach(btn => {
+        btn.classList.remove('hidden')
+    })
+    document.querySelectorAll('.addToCartWithQuantityContainer__text').forEach(text => {
+        text.textContent = '0'
+    })
+
+    document.querySelectorAll('.food__imageContainer').forEach(container => {
+        container.classList.remove('food__imageContainer--active')
+    })
+
+    renderCart()
+})
+
+
 function renderCart() {
 
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0)
@@ -109,6 +132,8 @@ function renderCart() {
             const index = button.getAttribute('data-index')
             const itemToRemove = cart[index]
 
+            if (!itemToRemove) return
+
             cart.splice(index, 1)
 
             const foodIndex = foods.findIndex(food => food.name === itemToRemove.name)
@@ -118,10 +143,14 @@ function renderCart() {
                 const addToCartBtn = document.querySelectorAll('.addToCartBtn')[foodIndex]
                 const quantityContainer = document.querySelectorAll('.addToCartWithQuantityContainer')[foodIndex]
                 const itemQuantityToAdd = document.querySelectorAll('.addToCartWithQuantityContainer__text')[foodIndex]
+                const imageContainers = document.querySelectorAll('.food__imageContainer')
 
                 itemQuantityToAdd.textContent = '0'
 
-                quantityContainer.classList.add('hidden')
+                if (itemQuantityToAdd) itemQuantityToAdd.textContent = '0'
+                if (quantityContainer) quantityContainer.classList.add('hidden')
+                if (addToCartBtn) addToCartBtn.classList.remove('hidden')
+                if (imageContainers[foodIndex]) imageContainers[foodIndex].classList.remove('food__imageContainer--active')
             }
 
             renderCart()
@@ -206,11 +235,13 @@ async function getData() {
 
         const addToCartBtn = document.querySelectorAll('.addToCartBtn')
         const addToCartWithQuantityContainer = document.querySelectorAll('.addToCartWithQuantityContainer')
+        const imageContainers = document.querySelectorAll('.food__imageContainer')
 
         addToCartBtn.forEach((button, index) => {
 
             button.addEventListener('click', () => {
                 addToCartWithQuantityContainer[index].classList.remove('hidden')
+                imageContainers[index].classList.add('food__imageContainer--active')
 
                 const food = foods[index]
                 const existingItem = cart.find(item => item.name === food.name)
@@ -283,6 +314,7 @@ async function getData() {
                         cart.splice(existingItemIndex, 1);
 
                         addToCartWithQuantityContainer[index].classList.add('hidden');
+                        imageContainers[index].classList.remove('food__imageContainer--active');
                     }
                 }
 
