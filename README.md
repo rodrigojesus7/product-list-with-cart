@@ -1,6 +1,6 @@
 # Product List with Cart
 
-An interactive food ordering application with a dynamic shopping cart, built as a solution to the **Product list with cart** challenge from [Frontend Mentor](https://www.frontendmentor.io/challenges/product-list-with-cart-5MmqLVAp_d).
+An interactive food ordering application with a dynamic shopping cart, built as a solution to the **Product List With Cart** challenge from [Frontend Mentor](https://www.frontendmentor.io/challenges/product-list-with-cart-5MmqLVAp_d).
 
 ## 🚀 Live Demo
 
@@ -8,7 +8,7 @@ An interactive food ordering application with a dynamic shopping cart, built as 
 
 ## 📸 Preview
 
-![E-commerce Product Page Preview](./src/images/preview.png)
+![Product List With Cart Preview](./src/images/preview.png)
 
 ## ✨ Features
 
